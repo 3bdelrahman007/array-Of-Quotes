@@ -1,0 +1,42 @@
+:root {
+    --primary-color: #edf2fc;
+    --secondry-color: #212121;
+}
+
+.dark-mode {
+    --primary-color: #000106;
+    --secondry-color: #fff;
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: "Caveat", cursive;
+}
+
+h1 {
+    font-family: "Poetsen One", sans-serif;
+    color: var(--secondry-color);
+}
+
+.quote .btn {
+    font-size: 32px;
+    padding-inline: 80px;
+    padding-block: 20px;
+    color: var(--secondry-color);
+}
+
+p {
+    font-size: 32px;
+    color: var(--secondry-color);
+
+}
+
+#icon {
+    font-size: 28px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--secondry-color);
+}
