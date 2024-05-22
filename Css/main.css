@@ -13,7 +13,7 @@ body {
     font-family: "Caveat", cursive;
 }
 
-h1 {
+h1, h2 {
     font-family: "Poetsen One", sans-serif;
     color: var(--secondry-color);
 }
@@ -40,3 +40,4 @@ p {
     padding: 8px;
     color: var(--secondry-color);
 }
+

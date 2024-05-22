@@ -1,3 +1,10 @@
+var icon = document.getElementById("icon")
+
+icon.onclick = function(){
+    document.body.classList.toggle("dark-mode");
+}
+
+
 var arrayOfQuotes = [
     {
         author : "Oscar Wilde",
@@ -64,9 +71,24 @@ function showQuotes() {
 }
 
 
+var quote = document.getElementById("quote")
+var author = document.getElementById("author")
 
-var icon = document.getElementById("icon")
 
-icon.onclick = function(){
-    document.body.classList.toggle("dark-mode");
+function addQuote(){
+    var Quotes = {
+
+        author : author.value,
+        quote : quote.value,
+    }
+
+    arrayOfQuotes.push(Quotes)
+    clear()
+    console.log(arrayOfQuotes);
+
+}
+
+function clear() {
+    author.value = ""
+    quote.value = ""
 }

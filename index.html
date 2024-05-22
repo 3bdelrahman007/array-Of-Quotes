@@ -22,16 +22,38 @@
 <body>
     <div class="container">
 
-        <i id="icon" class="fa-solid fa-moon"></i>
+        <div class="row">
+            <div class="col-md-6 mb-5">
+                <i id="icon" class="fa-solid fa-moon"></i>
+            </div>
+        </div>
 
-        <div class="quote text-center mt-5">
+        <div class="quote text-center mt-4">
             <h1 class="display-1 mb-3">Quote of the Day</h1>
             <p class="display-4 mb-5">Press the button below to recieve a random quote!</p>
-            <button onclick= showQuotes() class="btn btn-primary mb-5">New Quote</button>
+            <button onclick= showQuotes() class="btn btn-primary mb-5">Random Quote</button>
             <p id="displayQuote"></p>
             <p id="displayAuthor"></p>
         </div>
+
+        <div class="new-quote">
+            <h2 class="mb-4">Try to add Quote :</h2>
+
+            <div class="form-floating mb-3">
+                <textarea class="form-control" id="quote" placeholder="Enter new quote"></textarea>
+                <label for="quote">New Quote</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="author" placeholder="Author">
+                <label for="author">Author</label>
+            </div>
+
+            <button onclick= addQuote() class="btn btn-primary mb-5">Add New Quote</button>
+        </div>
     </div>
+
+
 
 
 
