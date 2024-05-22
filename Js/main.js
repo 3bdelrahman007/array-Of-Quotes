@@ -1,8 +1,12 @@
-var icon = document.getElementById("icon")
+var icon = document.getElementById("icon");
+
+var isDarkMode = localStorage.getItem("darkMode") === "true";
+document.body.classList.toggle("dark-mode", isDarkMode);
 
 icon.onclick = function(){
-    document.body.classList.toggle("dark-mode");
-}
+    var isDarkMode = document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode);
+};
 
 
 var arrayOfQuotes = [
@@ -75,18 +79,38 @@ var quote = document.getElementById("quote")
 var author = document.getElementById("author")
 
 
-function addQuote(){
-    var Quotes = {
+window.onload = function() {   
 
-        author : author.value,
-        quote : quote.value,
+    var savedQuotes = JSON.parse(localStorage.getItem('quotes'));
+
+    if(savedQuotes) {
+        arrayOfQuotes = savedQuotes;
     }
 
-    arrayOfQuotes.push(Quotes)
-    clear()
-    console.log(arrayOfQuotes);
-
 }
+
+function addQuote(){
+
+    var quoteText = quote.value;
+    var quoteAuthor = author.value;
+
+    if(quoteText && quoteAuthor) {
+
+        var newQuote = {
+            author: quoteAuthor,
+            quote: quoteText
+        };
+
+        arrayOfQuotes.push(newQuote);
+        localStorage.setItem('quotes', JSON.stringify(arrayOfQuotes));
+
+        clear();
+
+    } else {
+        alert('Please enter both quote and author before adding!');
+    }
+}
+
 
 function clear() {
     author.value = ""
